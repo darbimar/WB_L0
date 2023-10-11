@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары и точка</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__start">
+          <button class="header__menu">
+            <img src="./images/burger.svg" alt="Меню" />
+          </button>
+          <div class="header__logo">Товары и точка</div>
+        </div>
+        <form class="header__search" role="search">
+          <input
+            class="header__search-input"
+            type="search"
+            id="search-field"
+            name="search"
+            placeholder="Я ищу..."
+          />
+          <button class="header__search-button">
+            <img src="./images/search.svg" alt="Поиск" />
+          </button>
+        </form>
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">
+                <div class="nav__logo">
+                  <img src="./images/profile.svg" alt="Профиль" />
+                </div>
+                <span>Профиль</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">
+                <div class="nav__logo nav__logo_cart">
+                  <img src="./images/shopping_cart.svg" alt="Корзина" />
+                </div>
+                <span>Корзина</span>
+                <div class="count">3</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </body>
+</html>
