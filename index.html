@@ -10,20 +10,20 @@
     <div class="container">
       <header class="header">
         <div class="header__start">
-          <button class="header__menu">
+          <button class="header__menu" type="button">
             <img src="./images/burger.svg" alt="Меню" />
           </button>
-          <div class="header__logo">Товары и точка</div>
+          <a class="header__logo" href="#">Товары и точка</a>
         </div>
         <form class="header__search" role="search">
           <input
-            class="header__search-input"
+            class="input header__search-input"
             type="search"
             id="search-field"
             name="search"
             placeholder="Я ищу..."
           />
-          <button class="header__search-button">
+          <button class="header__search-button" type="submit">
             <img src="./images/search.svg" alt="Поиск" />
           </button>
         </form>
@@ -49,6 +49,293 @@
           </ul>
         </nav>
       </header>
+      <main class="main">
+        <div class="left-block">
+          <section class="basket">
+            <h1 class="title">Корзина</h1>
+            <div class="collapse">
+              <div class="collapse__checkbox">
+                <input type="checkbox" checked id="check__all" name="check__all" />
+                <label for="check__all">Выбрать все</label>
+              </div>
+              <button type="button">
+                <img src="./images/arrow.svg" alt="Свернуть корзину" />
+              </button>
+            </div>
+            <div class="basket__list">
+              <div class="basket__item item">
+                <div class="item__left-side">
+                  <input
+                    type="checkbox"
+                    checked
+                    id="check__item"
+                    name="check__item"
+                    class="item__checkbox"
+                  />
+                  <label for="check__item" hidden></label>
+                  <img
+                    class="item__image"
+                    src="./images/t-shirt.png"
+                    alt="Футболка UZcotton мужская"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info">
+                    <div class="item__title">Футболка UZcotton мужская</div>
+                    <div class="item__details">
+                      <div class="item__description">
+                        <div class="item__colour">Цвет: белый</div>
+                        <div class="item__size">Размер: 56</div>
+                      </div>
+                      <div class="item__stock text-small text-grey">Коледино WB</div>
+                      <div class="item__org text-small text-grey">
+                        OOO Вайлдберриз
+                        <img src="./images/info.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__count">
+                      <button class="item__count-change" type="button">−</button>
+                      <input
+                        class="input item__count-input"
+                        type="number"
+                        id="count"
+                        name="count"
+                        min="0"
+                        max="100"
+                      />
+                      <button class="item__count-change" type="button">+</button>
+                    </div>
+                    <div class="item__remain">Осталось 2 шт.</div>
+                    <div class="item__action-logo">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                  <div class="item__price price">
+                    <div class="price__current">522 <span>сом</span></div>
+                    <div class="price__total">1051 сом</div>
+                  </div>
+                </div>
+              </div>
+              <div class="basket__item item">
+                <div class="item__left-side">
+                  <input
+                    type="checkbox"
+                    checked
+                    id="check__item"
+                    name="check__item"
+                    class="item__checkbox"
+                  />
+                  <label for="check__item" hidden></label>
+                  <img
+                    class="item__image"
+                    src="./images/case.png"
+                    alt="Силиконовый чехол картхолдер"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info">
+                    <div class="item__title">
+                      Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
+                      Apple iPhone XR, MobiSafe
+                    </div>
+                    <div class="item__details">
+                      <div class="item__description">
+                        <div class="item__colour">Цвет: прозрачный</div>
+                      </div>
+                      <div class="item__stock text-small text-grey">Коледино WB</div>
+                      <div class="item__org text-small text-grey">
+                        OOO Мегапрофстиль
+                        <img src="./images/info.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__count">
+                      <button class="item__count-change" type="button">−</button>
+                      <input
+                        class="input item__count-input"
+                        type="number"
+                        id="count"
+                        name="count"
+                        min="0"
+                        max="100"
+                      />
+                      <button class="item__count-change" type="button">+</button>
+                    </div>
+                    <div class="item__action-logo">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                  <div class="item__price price">
+                    <div class="price__current price__current--small">
+                      2 100 047 <span>сом</span>
+                    </div>
+                    <div class="price__total">2 300 047 сом</div>
+                  </div>
+                </div>
+              </div>
+              <div class="basket__item item">
+                <div class="item__left-side">
+                  <input
+                    type="checkbox"
+                    checked
+                    id="check__item"
+                    name="check__item"
+                    class="item__checkbox"
+                  />
+                  <label for="check__item" hidden></label>
+                  <img
+                    class="item__image"
+                    src="./images/pencils.png"
+                    alt="Карандаши цветные Faber-Castell"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info">
+                    <div class="item__title">
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                      шестигранные,<br />
+                      Faber-Castell
+                    </div>
+                    <div class="item__details">
+                      <div class="item__stock text-small text-grey">Коледино WB</div>
+                      <div class="item__org text-small text-grey">
+                        OOO Вайлдберриз
+                        <img src="./images/info.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__count">
+                      <button class="item__count-change" type="button">−</button>
+                      <input
+                        class="input item__count-input"
+                        type="number"
+                        id="count"
+                        name="count"
+                        min="0"
+                        max="100"
+                      />
+                      <button class="item__count-change" type="button">+</button>
+                    </div>
+                    <div class="item__remain">Осталось 2 шт.</div>
+                    <div class="item__action-logo">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                  <div class="item__price price">
+                    <div class="price__current">494 <span>сом</span></div>
+                    <div class="price__total">950 сом</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="collapse">
+              <div class="collapse__title">Отсутствуют · 3 товара</div>
+              <button type="button">
+                <img src="./images/arrow.svg" alt="Свернуть корзину" />
+              </button>
+            </div>
+            <div class="basket__list">
+              <div class="basket__item item item--missing">
+                <div class="item__left-side">
+                  <img
+                    class="item__image"
+                    src="./images/t-shirt.png"
+                    alt="Футболка UZcotton мужская"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info item__info--missing">
+                    <div class="item__title">Футболка UZcotton мужская</div>
+                    <div class="item__details">
+                      <div class="item__description">
+                        <div class="item__colour">Цвет: белый</div>
+                        <div class="item__size">Размер: 56</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__action-logo item__action-logo--missing">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="basket__item item item--missing">
+                <div class="item__left-side">
+                  <img
+                    class="item__image"
+                    src="./images/case.png"
+                    alt="Силиконовый чехол картхолдер"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info item__info--missing">
+                    <div class="item__title">
+                      Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
+                      Apple iPhone XR, MobiSafe
+                    </div>
+                    <div class="item__details">
+                      <div class="item__description">
+                        <div class="item__colour">Цвет: прозрачный</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__action-logo item__action-logo--missing">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="basket__item item item--missing">
+                <div class="item__left-side">
+                  <img
+                    class="item__image"
+                    src="./images/pencils.png"
+                    alt="Карандаши цветные Faber-Castell"
+                    width="72"
+                    height="96"
+                  />
+                  <div class="item__info item__info--missing">
+                    <div class="item__title">
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                      шестигранные, Faber-Castell
+                    </div>
+                  </div>
+                </div>
+                <div class="item__right-side">
+                  <div class="item__action">
+                    <div class="item__action-logo item__action-logo--missing">
+                      <img src="./images/favorite.svg" alt="Избранное" />
+                      <img src="./images/bin.svg" alt="Удалить товар" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="right-block"></div>
+      </main>
     </div>
   </body>
 </html>
