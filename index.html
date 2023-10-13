@@ -43,7 +43,7 @@
                   <img src="./images/shopping_cart.svg" alt="Корзина" />
                 </div>
                 <span>Корзина</span>
-                <div class="count">3</div>
+                <div class="nav__count count">3</div>
               </a>
             </li>
           </ul>
@@ -333,9 +333,237 @@
               </div>
             </div>
           </section>
+          <section class="delivery section-wrapper">
+            <div class="delivery__header block-header">
+              <h2 class="delivery__title block-title">Способ доставки</h2>
+              <button class="delivery__button block-button">Изменить</button>
+            </div>
+            <div class="delivery__info">
+              <div class="delivery__subtitle">Пункт выдачи</div>
+              <div class="delivery__detail">
+                <div class="delivery__detail-main">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                <div class="delivery__detail-other">
+                  <img src="./images/star.svg" alt="" />
+                  <span>4.99</span>
+                  <span>Ежедневно с 10 до 21</span>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__info">
+              <div class="delivery__subtitle">Стоимость доставки</div>
+              <div class="delivery__detail">
+                <div class="delivery__detail-main">Бесплатно</div>
+              </div>
+            </div>
+            <div class="delivery__info">
+              <div class="delivery__subtitle">5—6 февраля</div>
+              <div class="delivery__vizual">
+                <div class="delivery__image">
+                  <img
+                    src="./images/t-shirt.png"
+                    alt="Футболка UZcotton мужская"
+                    width="40"
+                    height="56"
+                  />
+                </div>
+                <div class="delivery__image">
+                  <img
+                    src="./images/case.png"
+                    alt="Силиконовый чехол картхолдер"
+                    width="40"
+                    height="56"
+                  />
+                  <div class="delivery__count count">184</div>
+                </div>
+                <div class="delivery__image">
+                  <img
+                    src="./images/pencils.png"
+                    alt="Карандаши цветные Faber-Castell"
+                    width="40"
+                    height="56"
+                  />
+                  <div class="delivery__count count">2</div>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__info">
+              <div class="delivery__subtitle">7—8 февраля</div>
+              <div class="delivery__vizual">
+                <div class="delivery__image">
+                  <img
+                    src="./images/case.png"
+                    alt="Силиконовый чехол картхолдер"
+                    width="40"
+                    height="56"
+                  />
+                  <div class="delivery__count count">16</div>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__notification notification">
+              <img src="./images/check.svg" alt="" />
+              <div class="notification__text">
+                Обратная доставка товаров на склад при отказе — <span>бесплатно</span>
+              </div>
+            </div>
+          </section>
+          <section class="payment section-wrapper">
+            <div class="payment__header block-header">
+              <h2 class="payment__title block-title">Способ оплаты</h2>
+              <button class="payment__button block-button">Изменить</button>
+            </div>
+            <div class="payment__card card">
+              <div class="card__logo">
+                <img src="./images/mir.svg" alt="" />
+              </div>
+              <div class="card__number">1234 56•• •••• 1234</div>
+              <div class="card__expiry">01/30</div>
+            </div>
+            <div class="payment__notification">Спишем оплату с карты при получении</div>
+          </section>
+          <section class="recipient section-wrapper">
+            <div class="recipient__header block-header">
+              <h2 class="recipient__title block-title">Получатель</h2>
+            </div>
+            <form class="recipient__form" action="">
+              <div class="recepient__block">
+                <div class="recepient__field">
+                  <label class="recepient__label" for="name" hidden>Имя</label>
+                  <input
+                    class="recepient__input input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Имя"
+                    required
+                  />
+                </div>
+                <div class="recepient__field">
+                  <label class="recepient__label" for="surname" hidden>Фамилия</label>
+                  <input
+                    class="recepient__input input"
+                    type="text"
+                    id="surname"
+                    name="surname"
+                    placeholder="Фамилия"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="recepient__block">
+                <div class="recepient__field">
+                  <label class="recepient__label" for="email" hidden>Почта</label>
+                  <input
+                    class="recepient__input input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Почта"
+                    required
+                  />
+                </div>
+                <div class="recepient__field">
+                  <label class="recepient__label" for="phone" hidden>Телефон</label>
+                  <input
+                    class="recepient__input input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 988 123-45-67"
+                    required
+                  />
+                </div>
+                <div class="recepient__field">
+                  <label class="recepient__label" for="tin" hidden>ИНН</label>
+                  <input
+                    class="recepient__input input"
+                    type="number"
+                    id="tin"
+                    name="tin"
+                    placeholder="ИНН"
+                    max="14"
+                    required
+                  />
+                  <div class="recepient__footnote">Для таможенного оформления</div>
+                </div>
+              </div>
+            </form>
+          </section>
         </div>
-        <div class="right-block"></div>
+        <div class="right-block">
+          <section class="order section-wrapper">
+            <form action="">
+              <div class="order__header block-header">
+                <h2 class="order__title block-title">Итого</h2>
+                <div class="order__sum block-title">2 101 063 сом</div>
+              </div>
+              <div class="order__details">
+                <div class="order__info">
+                  <div class="order__detail">203 товара</div>
+                  <div class="order__value">2 302 048 сом</div>
+                </div>
+                <div class="order__info">
+                  <div class="order__detail">Скидка</div>
+                  <div class="order__value">−200 985 сом</div>
+                </div>
+                <div class="order__info">
+                  <div class="order__detail">Доставка</div>
+                  <div class="order__value">Бесплатно</div>
+                </div>
+              </div>
+              <div class="order__delivery content-wrapper">
+                <div class="order__delivery-header content-header">
+                  <div class="order__delivery-title content-title">Доставка в пункт выдачи</div>
+                  <button class="order__delivery-button content-button">
+                    <img src="./images/pencil.svg" alt="Изменить" />
+                  </button>
+                </div>
+                <div class="order__addres">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                <span class="order__date">5–8 фев</span>
+                <div class="order__notification notification">
+                  <img src="./images/check.svg" alt="" />
+                  <div class="notification__text">
+                    Обратная доставка товаров на склад при отказе — <span>бесплатно</span>
+                  </div>
+                </div>
+              </div>
+              <div class="order__payment content-wrapper">
+                <div class="order__payment-header content-header">
+                  <div class="order__payment-title content-title">Оплата картой</div>
+                  <button class="order__payment-button content-button">
+                    <img src="./images/pencil.svg" alt="Изменить" />
+                  </button>
+                </div>
+                <div class="order__card card">
+                  <div class="card__logo">
+                    <img src="./images/mir.svg" alt="" />
+                  </div>
+                  <div class="card__number">1234 56•• •••• 1234</div>
+                </div>
+                <div class="order__notification">
+                  <div class="order__payment-check">
+                    <input type="checkbox" checked id="pay-immediately" name="pay-immediately" />
+                    <label for="pay-immediately">Списать оплату сразу</label>
+                  </div>
+                  <div class="order__payment-info">Спишем оплату с карты при получении</div>
+                </div>
+              </div>
+              <button class="order__button" type="submit">Заказать</button>
+              <div class="order__agreement">
+                <img src="./images/mark.svg" alt="" />
+                <div class="order__agreement-text">
+                  Соглашаюсь <span>с правилами пользования торговой площадкой</span> и <span
+                    >возврата</span
+                  >
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
       </main>
+      <footer class="footer">
+        <div class="footer__info">© 2022 ООО «Товары и точка»</div>
+      </footer>
     </div>
   </body>
 </html>
