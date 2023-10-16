@@ -9,4 +9,6 @@
   --text-black: #000;
   --red: #ff3b30;
   --system-smoky-dark: #f0ecf4;
+  --background: rgba(5, 0, 10, 0.3);
+  --light-system-gray: #a0a0a4;
 }

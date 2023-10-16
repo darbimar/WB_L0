@@ -361,7 +361,7 @@
                 <div class="delivery__subtitle">Пункт выдачи</div>
                 <div class="delivery__detail">
                   <div class="delivery__detail-main">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-                  <div class="delivery__detail-other">
+                  <div class="delivery__detail-other rating">
                     <img src="./images/star.svg" alt="" />
                     <span>4.99</span>
                     <span>Ежедневно с 10 до 21</span>
@@ -568,7 +568,7 @@
                   <div class="order__payment-info">Спишем оплату с карты при получении</div>
                 </div>
               </div>
-              <button class="order__button" type="submit">Заказать</button>
+              <button class="order__button button-submit" type="submit">Заказать</button>
               <div class="order__agreement">
                 <img src="./images/mark.svg" alt="" />
                 <div class="order__agreement-text">
@@ -703,6 +703,132 @@
           </svg>
         </a>
       </nav>
+      <div class="payment-modal modal">
+        <div class="modal__content block">
+          <div class="modal__header block__header">
+            <h2 class="modal__title block__title">Способ оплаты</h2>
+            <button class="modal__button block__button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z"
+                  fill="#9797AF"
+                />
+              </svg>
+            </button>
+          </div>
+          <form class="payment-modal__form modal__form" action="">
+            <div class="modal__choice choice">
+              <div class="choice__item">
+                <input type="radio" id="mir" />
+                <label for="mir" class="card">
+                  <div class="card__logo"><img src="./images/mir.svg" alt="" /></div>
+                  <div class="card__number">1234 56•• •••• 1234</div>
+                </label>
+              </div>
+              <div class="choice__item">
+                <input type="radio" id="visa" />
+                <label for="visa" class="card"
+                  ><div class="card__logo"><img src="./images/visa.svg" alt="" /></div>
+                  <div class="card__number">1234 56•• •••• 1234</div></label
+                >
+              </div>
+              <div class="choice__item">
+                <input type="radio" id="mastercard" />
+                <label for="mastercard" class="card">
+                  <div class="card__logo"><img src="./images/mastercard.svg" alt="" /></div>
+                  <div class="card__number">1234 56•• •••• 1234</div>
+                </label>
+              </div>
+              <div class="choice__item">
+                <input type="radio" id="maestro" />
+                <label for="maestro" class="card">
+                  <div class="card__logo"><img src="./images/maestro.svg" alt="" /></div>
+                  <div class="card__number">1234 56•• •••• 1234</div></label
+                >
+              </div>
+            </div>
+            <button class="payment-modal__button button-submit" type="submit">Заказать</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="delivery-modal modal">
+        <div class="modal__content modal__content--delivery block">
+          <div class="modal__header block__header">
+            <h2 class="modal__title block__title">Способ доставки</h2>
+            <button class="modal__button block__button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z"
+                  fill="#9797AF"
+                />
+              </svg>
+            </button>
+          </div>
+          <form class="delivery-modal__form modal__form" action="">
+            <div class="delivery-modal__type">
+              <button class="button-delivery" type="button">В пункт выдачи</button>
+              <button class="button-delivery" type="button">Курьером</button>
+            </div>
+            <div class="delivery-modal__subtitle">Мои адреса</div>
+            <div class="modal__choice choice">
+              <div class="choice__item">
+                <input type="radio" id="addres_1" />
+                <label for="addres_1" class="">
+                  <div class="choice__text">Бишкек, улица Табышалиева, 57</div>
+                  <div class="choice__rating rating">
+                    <img src="./images/star.svg" alt="" />
+                    <span>4.99</span>
+                    <span>Пункт выдачи</span>
+                  </div>
+                </label>
+                <img class="choice__delete" src="./images/bin.svg" alt="" />
+              </div>
+              <div class="choice__item">
+                <input type="radio" id="addres_2" />
+                <label for="addres_2" class="">
+                  <div class="choice__text">Бишкек, улица Жукеева-Пудовкина, 77/17</div>
+                  <div class="choice__rating rating">
+                    <img src="./images/star.svg" alt="" />
+                    <span>4.99</span>
+                    <span>Пункт выдачи</span>
+                  </div>
+                </label>
+                <img class="choice__delete" src="./images/bin.svg" alt="" />
+              </div>
+              <div class="choice__item">
+                <input type="radio" id="addres_3" />
+                <label for="addres_3" class="">
+                  <div class="choice__text">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</div>
+                  <div class="choice__rating rating">
+                    <img src="./images/star.svg" alt="" />
+                    <span>4.99</span>
+                    <span>Пункт выдачи</span>
+                  </div>
+                </label>
+                <img class="choice__delete" src="./images/bin.svg" alt="" />
+              </div>
+            </div>
+            <button class="delivery-modal__button button-submit" type="submit">Выбрать</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
