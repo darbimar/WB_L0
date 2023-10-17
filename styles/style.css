@@ -281,7 +281,7 @@ input[type='checkbox']:checked {
 }
 
 .item__info {
-  max-width: 275px;
+  max-width: 248px;
   margin-top: 3px;
 }
 
@@ -575,6 +575,12 @@ input[type='checkbox']:checked {
   margin-top: -1px;
 }
 
+.order {
+  position: sticky;
+  top: 22px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
 .order__header {
   margin-bottom: 8px;
 }
@@ -585,6 +591,11 @@ input[type='checkbox']:checked {
 
 .order__details {
   margin-top: 8px;
+}
+
+.order__detail--count {
+  display: flex;
+  gap: 4px;
 }
 
 .order__info {
@@ -706,7 +717,7 @@ input[type='checkbox']:checked {
   top: 0;
   left: 0;
   z-index: 9999;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100vw;

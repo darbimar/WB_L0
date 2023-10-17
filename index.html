@@ -46,7 +46,7 @@
                   <img src="./images/shopping_cart.svg" alt="Корзина" />
                 </div>
                 <span>Корзина</span>
-                <div class="nav__count count">3</div>
+                <div class="nav__count count total-count">3</div>
               </a>
             </li>
           </ul>
@@ -68,288 +68,14 @@
                 <img src="./images/arrow.svg" alt="Свернуть корзину" />
               </button>
             </div>
-            <div class="basket__list">
-              <div class="basket__item item">
-                <div class="item__left-side">
-                  <input
-                    type="checkbox"
-                    checked
-                    id="check__item"
-                    name="check__item"
-                    class="item__checkbox"
-                  />
-                  <label for="check__item" hidden></label>
-                  <img
-                    class="item__image"
-                    src="./images/t-shirt.png"
-                    alt="Футболка UZcotton мужская"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info">
-                    <div class="item__price item__price-small price">
-                      <div class="price__current">522 <span>сом</span></div>
-                      <div class="price__total">1051 сом</div>
-                    </div>
-                    <div class="item__title">Футболка UZcotton мужская</div>
-                    <div class="item__details">
-                      <div class="item__description">
-                        <div class="item__colour">Цвет: белый</div>
-                        <div class="item__size">Размер: 56</div>
-                      </div>
-                      <div class="item__stock text-small text-grey">Коледино WB</div>
-                      <div class="item__org text-small text-grey">
-                        OOO Вайлдберриз
-                        <img src="./images/info.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action">
-                    <div class="item__count">
-                      <button class="item__count-change" type="button">−</button>
-                      <input
-                        class="input item__count-input"
-                        type="number"
-                        id="count"
-                        name="count"
-                        min="0"
-                        max="100"
-                      />
-                      <button class="item__count-change" type="button">+</button>
-                    </div>
-                    <div class="item__remain">Осталось 2 шт.</div>
-                    <div class="item__action-logo">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                  <div class="item__price price">
-                    <div class="price__current">522 <span>сом</span></div>
-                    <div class="price__total">1051 сом</div>
-                  </div>
-                </div>
-              </div>
-              <div class="basket__item item">
-                <div class="item__left-side">
-                  <input
-                    type="checkbox"
-                    checked
-                    id="check__item"
-                    name="check__item"
-                    class="item__checkbox"
-                  />
-                  <label for="check__item" hidden></label>
-                  <img
-                    class="item__image"
-                    src="./images/case.png"
-                    alt="Силиконовый чехол картхолдер"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info">
-                    <div class="item__price item__price-small price">
-                      <div class="price__current">2 100 047 <span>сом</span></div>
-                      <div class="price__total">2 300 047 сом</div>
-                    </div>
-                    <div class="item__title">
-                      Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
-                      Apple iPhone XR, MobiSafe
-                    </div>
-                    <div class="item__details">
-                      <div class="item__description">
-                        <div class="item__colour">Цвет: прозрачный</div>
-                      </div>
-                      <div class="item__stock text-small text-grey">Коледино WB</div>
-                      <div class="item__org text-small text-grey">
-                        OOO Мегапрофстиль
-                        <img src="./images/info.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action">
-                    <div class="item__count">
-                      <button class="item__count-change" type="button">−</button>
-                      <input
-                        class="input item__count-input"
-                        type="number"
-                        id="count"
-                        name="count"
-                        min="0"
-                        max="100"
-                      />
-                      <button class="item__count-change" type="button">+</button>
-                    </div>
-                    <div class="item__action-logo">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                  <div class="item__price price">
-                    <div class="price__current price__current--small">
-                      2 100 047 <span>сом</span>
-                    </div>
-                    <div class="price__total">2 300 047 сом</div>
-                  </div>
-                </div>
-              </div>
-              <div class="basket__item item">
-                <div class="item__left-side">
-                  <input
-                    type="checkbox"
-                    checked
-                    id="check__item"
-                    name="check__item"
-                    class="item__checkbox"
-                  />
-                  <label for="check__item" hidden></label>
-                  <img
-                    class="item__image"
-                    src="./images/pencils.png"
-                    alt="Карандаши цветные Faber-Castell"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info">
-                    <div class="item__price item__price-small price">
-                      <div class="price__current">494 <span>сом</span></div>
-                      <div class="price__total">950 сом</div>
-                    </div>
-                    <div class="item__title">
-                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
-                      шестигранные,<br />
-                      Faber-Castell
-                    </div>
-                    <div class="item__details">
-                      <div class="item__stock text-small text-grey">Коледино WB</div>
-                      <div class="item__org text-small text-grey">
-                        OOO Вайлдберриз
-                        <img src="./images/info.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action">
-                    <div class="item__count">
-                      <button class="item__count-change" type="button">−</button>
-                      <input
-                        class="input item__count-input"
-                        type="number"
-                        id="count"
-                        name="count"
-                        min="0"
-                        max="100"
-                      />
-                      <button class="item__count-change" type="button">+</button>
-                    </div>
-                    <div class="item__remain">Осталось 2 шт.</div>
-                    <div class="item__action-logo">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                  <div class="item__price price">
-                    <div class="price__current">494 <span>сом</span></div>
-                    <div class="price__total">950 сом</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="basket__list"></div>
             <div class="collapse">
               <div class="collapse__title">Отсутствуют · 3 товара</div>
               <button class="collapse__button" type="button">
                 <img src="./images/arrow.svg" alt="Свернуть корзину" />
               </button>
             </div>
-            <div class="basket__list--missing basket__list">
-              <div class="basket__item item item--missing">
-                <div class="item__left-side">
-                  <img
-                    class="item__image"
-                    src="./images/t-shirt.png"
-                    alt="Футболка UZcotton мужская"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info item__info--missing">
-                    <div class="item__title item__title--missing">Футболка UZcotton мужская</div>
-                    <div class="item__details">
-                      <div class="item__description">
-                        <div class="item__colour">Цвет: белый</div>
-                        <div class="item__size">Размер: 56</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action item__action--missing">
-                    <div class="item__action-logo item__action-logo--missing">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="basket__item item item--missing">
-                <div class="item__left-side">
-                  <img
-                    class="item__image"
-                    src="./images/case.png"
-                    alt="Силиконовый чехол картхолдер"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info item__info--missing">
-                    <div class="item__title item__title--missing">
-                      Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
-                      Apple iPhone XR, MobiSafe
-                    </div>
-                    <div class="item__details">
-                      <div class="item__description">
-                        <div class="item__colour">Цвет: прозрачный</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action item__action--missing">
-                    <div class="item__action-logo item__action-logo--missing">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="basket__item item item--missing">
-                <div class="item__left-side">
-                  <img
-                    class="item__image"
-                    src="./images/pencils.png"
-                    alt="Карандаши цветные Faber-Castell"
-                    width="72"
-                    height="96"
-                  />
-                  <div class="item__info item__info--missing">
-                    <div class="item__title item__title--missing">
-                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
-                      шестигранные, Faber-Castell
-                    </div>
-                  </div>
-                </div>
-                <div class="item__right-side">
-                  <div class="item__action item__action--missing">
-                    <div class="item__action-logo item__action-logo--missing">
-                      <img src="./images/favorite.svg" alt="Избранное" />
-                      <img src="./images/bin.svg" alt="Удалить товар" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="basket__list--missing basket__list"></div>
           </section>
           <section class="delivery block">
             <div class="delivery__header block__header">
@@ -519,12 +245,15 @@
               </div>
               <div class="order__details">
                 <div class="order__info">
-                  <div class="order__detail">203 товара</div>
-                  <div class="order__value">2 302 048 сом</div>
+                  <div class="order__detail order__detail--count">
+                    <div class="total-count">203</div>
+                    товара
+                  </div>
+                  <div class="order__value" id="full-sum">2 302 048 сом</div>
                 </div>
                 <div class="order__info">
                   <div class="order__detail">Скидка</div>
-                  <div class="order__value">−200 985 сом</div>
+                  <div class="order__value" id="full-discount">−200 985 сом</div>
                 </div>
                 <div class="order__info">
                   <div class="order__detail">Доставка</div>
@@ -830,5 +559,7 @@
         </div>
       </div>
     </div>
+
+    <script src="scripts/script.js" type="module"></script>
   </body>
 </html>
