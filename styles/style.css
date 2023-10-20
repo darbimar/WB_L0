@@ -373,6 +373,10 @@ input[type='checkbox']:checked {
   margin-right: 127px;
 }
 
+.item__action-favorite--active {
+  filter: var(--active-button);
+}
+
 .price {
   display: flex;
   flex-direction: column;

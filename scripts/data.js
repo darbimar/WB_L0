@@ -21,7 +21,6 @@ export const products = [
     organization: 'OOO Вайлдберриз',
     image: './images/t-shirt.png',
     isChecked: true,
-    isFavorite: true
   },
   {
     id: 2,
@@ -44,8 +43,7 @@ export const products = [
     warehouse: 'Коледино WB',
     organization: 'OOO Мегапрофстиль',
     image: './images/case.png',
-    isChecked: false,
-    isFavorite: false
+    isChecked: true,
   },
   {
     id: 3,
@@ -68,7 +66,6 @@ export const products = [
     warehouse: 'Коледино WB',
     organization: 'OOO Вайлдберриз',
     image: './images/pencils.png',
-    isChecked: false,
-    isFavorite: false
+    isChecked: true,
   },
 ]

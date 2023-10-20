@@ -7,22 +7,25 @@ export const setTotalSum = () => {
   const totalFullSumElem = document.querySelector('#full-sum');
   const totalDiscountSumElem = document.querySelector('#full-discount');
 
+
+  const selectedProducts = products.filter(item => item.isChecked);
+
   let totalCurrentSum = 0;
   let totalCount = 0;
   let totalFullSum = 0;
   let totalDiscountSum = 0;
 
-  products.forEach((product) => {
+  selectedProducts.forEach((product) => {
     const { fullPrice, discount, count } = product;
 
-    console.log(fullPrice, discount, count);
-
-    let currentPrice = fullPrice;
+    let currentPrice = 0;
+    let totalDiscount = 0;
 
     discount.forEach((item) => {
-      currentPrice *= (1 - item.value);
+      totalDiscount += item.value;
     });
 
+    currentPrice = fullPrice * (1 - totalDiscount);
     totalCurrentSum += currentPrice * count;
     totalCount += count;
     totalFullSum += fullPrice * count * 1;
