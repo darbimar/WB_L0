@@ -1,7 +1,7 @@
 import { products } from './data.js';
 import { renderProducts, renderMissingProducts } from './components/product/renderProducts.js';
 import { setTotalSum } from './components/total.js';
-import { addFavorite, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice } from './components/product/updateProduct.js';
+import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice } from './components/product/updateProduct.js';
 import { renderDeliveryDateInfo } from './components/delivery.js';
 
 renderProducts(products);
@@ -13,6 +13,7 @@ const productsList = document.querySelector('.basket__list');
 const missingProductsList = document.querySelector('.basket__list--missing');
 const checkboxes = document.querySelectorAll('#check__item');
 const selectAllCheckbox = document.querySelector('#check__all');
+const collapseButtons = document.querySelectorAll('.collapse__button');
 
 //Изменение количества товаров по нажатию на кнопку
 productsList.addEventListener('click', event => {
@@ -55,3 +56,25 @@ productsList.addEventListener('click', (event) => selectProduct(event, selectAll
 
 //Переключение чекбокса выбора всех продуктов
 selectAllCheckbox.addEventListener('click', () => selectAllProduct(selectAllCheckbox, checkboxes));
+
+// Сворачивание списка товаров 
+collapseButtons.forEach(button => button.addEventListener('click', () => {
+
+  button.classList.toggle('collapse__button--rotate');
+  const buttonParent = button.parentNode;
+  const nextElement = buttonParent.nextElementSibling;
+  const isHidden = nextElement.classList.contains('hidden');
+
+  if (isHidden) {
+    nextElement.classList.remove('hidden');
+  } else {
+    nextElement.classList.add('hidden');
+  }
+
+  if (!nextElement.classList.contains("basket__list--missing")) {
+    changeCollapse();
+  }
+
+}));
+
+

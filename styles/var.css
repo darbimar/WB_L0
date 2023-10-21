@@ -13,4 +13,6 @@
   --light-system-gray: #a0a0a4;
   --active-button: invert(25%) sepia(95%) saturate(7282%) hue-rotate(302deg) brightness(91%)
     contrast(94%);
+  --hover-delete-button: invert(40%) sepia(99%) saturate(1841%) hue-rotate(343deg) brightness(94%)
+    contrast(105%);
 }

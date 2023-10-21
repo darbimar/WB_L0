@@ -218,6 +218,13 @@ input[type='checkbox']:checked {
   align-items: center;
 }
 
+.collapse--bold {
+  align-items: self-start;
+
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .collapse__checkbox {
   display: flex;
   align-items: center;
@@ -232,6 +239,17 @@ input[type='checkbox']:checked {
 .collapse__button {
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.collapse__button--rotate {
+  margin-bottom: 18.5px;
+  transform: rotate(180deg);
+}
+
+.collapse__text {
+  display: none;
+  font-weight: 600;
 }
 
 .basket {
@@ -373,8 +391,13 @@ input[type='checkbox']:checked {
   margin-right: 127px;
 }
 
+.item__action-favorite:hover,
 .item__action-favorite--active {
   filter: var(--active-button);
+}
+
+.item__action-delete:hover {
+  filter: var(--hover-delete-button);
 }
 
 .price {
@@ -817,6 +840,10 @@ input[type='checkbox']:checked {
 }
 
 .choice__rating {
+  display: none;
+}
+
+.hidden {
   display: none;
 }
 

@@ -1,7 +1,7 @@
 import { products } from "../../data.js";
 import { formatSum } from "../../utils/formatSum.js";
 import { renderDeliveryDateInfo } from "../delivery.js";
-import { setTotalSum } from "../total.js";
+import { getTotalData, setTotalSum } from "../total.js";
 import { renderMissingProducts, renderProducts } from "./renderProducts.js";
 
 export let updatedProducts = products;
@@ -61,8 +61,6 @@ export const updatePrice = (product) => {
 
   currentPriceElem.textContent = currentPrice;
   fullPriceElem.textContent = fullPrice;
-
-  // renderProducts(products);
 }
 
 export const deleteProduct = (event, productList) => {
@@ -136,4 +134,28 @@ export const selectAllProduct = (selectAllCheckbox, checkboxes) => {
   setTotalSum();
   renderDeliveryDateInfo(updatedProducts);
 
+}
+
+export const changeCollapse = () => {
+  const collapse = document.querySelector('.collapse');
+  const collapseCheckbox = document.querySelector('.collapse__checkbox');
+  const collapseText = document.querySelector('.collapse__text');
+
+  if (!collapseCheckbox) return
+
+  if (collapseCheckbox.style.display === 'none') {
+    collapseCheckbox.style.display = 'flex';
+    collapseText.style.display = 'none';
+    collapse.classList.remove('collapse--bold');
+  } else {
+
+    let [totalCurrentSum, totalCount] = getTotalData(products);
+
+    totalCurrentSum = formatSum(totalCurrentSum);
+
+    collapseCheckbox.style.display = 'none';
+    collapseText.style.display = 'block';
+    collapseText.innerHTML = `<div collapse__text>${totalCount} товаров · ${totalCurrentSum} сом</div>`;
+    collapse.classList.add('collapse--bold');
+  }
 }

@@ -10,12 +10,21 @@ export const setTotalSum = () => {
 
   const selectedProducts = products.filter(item => item.isChecked);
 
+  const [totalCurrentSum, totalCount, totalFullSum, totalDiscountSum] = getTotalData(selectedProducts);
+
+  totalCurrentSumElem.textContent = `${formatSum(totalCurrentSum)} сом`;
+  totalCountElem.forEach((item) => item.textContent = totalCount);
+  totalFullSumElem.textContent = `${formatSum(totalFullSum)} сом`;
+  totalDiscountSumElem.textContent = `${formatSum(totalDiscountSum)} сом`;
+}
+
+export const getTotalData = (products) => {
   let totalCurrentSum = 0;
   let totalCount = 0;
   let totalFullSum = 0;
   let totalDiscountSum = 0;
 
-  selectedProducts.forEach((product) => {
+  products.forEach((product) => {
     const { fullPrice, discount, count } = product;
 
     let currentPrice = 0;
@@ -32,9 +41,7 @@ export const setTotalSum = () => {
     totalDiscountSum += totalFullSum - totalCurrentSum;
   });
 
-  totalCurrentSumElem.textContent = `${formatSum(totalCurrentSum)} сом`;
-  totalCountElem.forEach((item) => item.textContent = totalCount);
-  totalFullSumElem.textContent = `${formatSum(totalFullSum)} сом`;
-  totalDiscountSumElem.textContent = `${formatSum(totalDiscountSum)} сом`;
+  return [totalCurrentSum, totalCount, totalFullSum, totalDiscountSum];
+
 }
 
