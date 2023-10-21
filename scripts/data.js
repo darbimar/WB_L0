@@ -21,6 +21,12 @@ export const products = [
     organization: 'OOO Вайлдберриз',
     image: './images/t-shirt.png',
     isChecked: true,
+    deliveryTime: [
+      {
+        date: '5—6 февраля',
+        maxAmount: 2
+      }
+    ]
   },
   {
     id: 2,
@@ -44,6 +50,16 @@ export const products = [
     organization: 'OOO Мегапрофстиль',
     image: './images/case.png',
     isChecked: true,
+    deliveryTime: [
+      {
+        date: '5—6 февраля',
+        maxAmount: 184
+      },
+      {
+        date: '7-8 февраля',
+        maxAmount: 16
+      }
+    ]
   },
   {
     id: 3,
@@ -67,5 +83,11 @@ export const products = [
     organization: 'OOO Вайлдберриз',
     image: './images/pencils.png',
     isChecked: true,
+    deliveryTime: [
+      {
+        date: '5—6 февраля',
+        maxAmount: 2
+      }
+    ]
   },
 ]

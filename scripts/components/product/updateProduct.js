@@ -1,10 +1,14 @@
 import { products } from "../../data.js";
 import { formatSum } from "../../utils/formatSum.js";
+import { renderDeliveryDateInfo } from "../delivery.js";
 import { setTotalSum } from "../total.js";
 import { renderMissingProducts, renderProducts } from "./renderProducts.js";
 
 export let updatedProducts = products;
 let updatedMissingProducts = products;
+
+const checkboxes = document.querySelectorAll('.item__checkbox');
+
 
 export const changeCount = (id, action, value) => {
   const product = updatedProducts.filter(p => p.id === id)[0];
@@ -41,6 +45,9 @@ export const changeCount = (id, action, value) => {
       updatePrice(updatedProducts[id - 1]);
     }
   });
+
+  renderDeliveryDateInfo(updatedProducts);
+
 }
 
 export const updatePrice = (product) => {
@@ -75,6 +82,10 @@ export const deleteProduct = (event, productList) => {
     }
     setTotalSum();
   }
+
+  console.log(checkboxes);
+
+  renderDeliveryDateInfo(updatedProducts);
 }
 
 export const addFavorite = (event) => {
@@ -93,18 +104,19 @@ export const selectProduct = (event, selectAllCheckbox) => {
   const itemId = +item.dataset.id;
 
   if (checkbox.checked) {
-    products[itemId - 1].isChecked = true;
+    updatedProducts[itemId - 1].isChecked = true;
   } else if (!checkbox.checked) {
-    products[itemId - 1].isChecked = false;
+    updatedProducts[itemId - 1].isChecked = false;
   }
 
-  if (!products.every((item) => item.isChecked)) {
+  if (!updatedProducts.every((item) => item.isChecked)) {
     selectAllCheckbox.checked = false;
   } else {
     selectAllCheckbox.checked = true;
   }
 
   setTotalSum();
+  renderDeliveryDateInfo(updatedProducts);
 }
 
 export const selectAllProduct = (selectAllCheckbox, checkboxes) => {
@@ -122,4 +134,6 @@ export const selectAllProduct = (selectAllCheckbox, checkboxes) => {
   });
 
   setTotalSum();
+  renderDeliveryDateInfo(updatedProducts);
+
 }

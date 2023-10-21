@@ -2,17 +2,17 @@ import { products } from './data.js';
 import { renderProducts, renderMissingProducts } from './components/product/renderProducts.js';
 import { setTotalSum } from './components/total.js';
 import { addFavorite, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice } from './components/product/updateProduct.js';
+import { renderDeliveryDateInfo } from './components/delivery.js';
 
 renderProducts(products);
 renderMissingProducts(products);
+renderDeliveryDateInfo(products);
 setTotalSum();
 
 const productsList = document.querySelector('.basket__list');
 const missingProductsList = document.querySelector('.basket__list--missing');
-const checkboxes = document.querySelectorAll('.item__checkbox');
-const checkedInputs = document.querySelectorAll('.item__checkbox:checked');
+const checkboxes = document.querySelectorAll('#check__item');
 const selectAllCheckbox = document.querySelector('#check__all');
-
 
 //Изменение количества товаров по нажатию на кнопку
 productsList.addEventListener('click', event => {
@@ -38,6 +38,7 @@ document.querySelectorAll('.item__count-input').forEach(input => {
     changeCount(id, 'set', value);
     setTotalSum();
     updatePrice(products[id - 1]);
+    renderDeliveryDateInfo(products);
   });
 });
 
@@ -50,8 +51,7 @@ productsList.addEventListener('click', event => addFavorite(event));
 missingProductsList.addEventListener('click', event => addFavorite(event));
 
 //Переключение чекбокса выбора продукта
-checkboxes.forEach((checkbox) => checkbox.addEventListener('change', (event) => selectProduct(event, selectAllCheckbox)));
+productsList.addEventListener('click', (event) => selectProduct(event, selectAllCheckbox))
 
 //Переключение чекбокса выбора всех продуктов
 selectAllCheckbox.addEventListener('click', () => selectAllProduct(selectAllCheckbox, checkboxes));
-
