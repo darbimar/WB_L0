@@ -34,20 +34,18 @@ export const changeCount = (id, action, value) => {
     if (input.value === '' || input.value === '0') {
       product.count = 1;
       input.value = 1;
-      setTotalSum();
       updatePrice(updatedProducts[id - 1]);
     }
 
     if (input.value > maxCount) {
       product.count = maxCount;
       input.value = maxCount;
-      setTotalSum();
       updatePrice(updatedProducts[id - 1]);
+      renderDeliveryDateInfo(updatedProducts);
     }
   });
 
   renderDeliveryDateInfo(updatedProducts);
-
 }
 
 export const updatePrice = (product) => {

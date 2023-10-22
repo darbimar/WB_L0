@@ -21,7 +21,7 @@ export const renderDeliveryDateInfo = (products) => {
 
     if (product.isChecked && product.count > 0) {
 
-      if (product.count > firstDeliveryTime.maxAmount) {
+      if (product.count > firstDeliveryTime.maxAmount && product.count <= 200) {
 
         clonedSubtitle.textContent = secondDeliveryTime.date;
         const deliveryImage = renderImage(product, product.count - firstDeliveryTime.maxAmount);

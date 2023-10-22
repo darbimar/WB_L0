@@ -806,6 +806,9 @@ input[type='checkbox']:checked {
 
 .choice__item label {
   display: flex;
+}
+
+.choice__item--delivery label {
   flex-direction: column;
 }
 
@@ -834,6 +837,10 @@ input[type='checkbox']:checked {
   letter-spacing: 0.4px;
 }
 
+.button-delivery--active {
+  border-color: var(--system-magenta);
+}
+
 .delivery-modal__type {
   display: flex;
   justify-content: center;
@@ -850,10 +857,6 @@ input[type='checkbox']:checked {
 
 .delivery-modal__button {
   margin-top: 32px;
-}
-
-.choice__rating {
-  display: none;
 }
 
 .hidden {
@@ -1152,10 +1155,6 @@ input[type='checkbox']:checked {
   .button-delivery {
     width: 140px;
     height: 40px;
-  }
-
-  .choice__rating {
-    display: flex;
   }
 
   .choice__rating:last-child {

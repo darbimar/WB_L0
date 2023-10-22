@@ -99,7 +99,7 @@ export const renderProducts = (products) => {
         </div>
       </div>
     </div>
-  `
+`
   });
 }
 

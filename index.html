@@ -81,7 +81,7 @@
           <section class="delivery block">
             <div class="delivery__header block__header">
               <h2 class="delivery__title block__title">Способ доставки</h2>
-              <button class="delivery__button block__button">Изменить</button>
+              <button class="delivery__button block__button" type="button">Изменить</button>
             </div>
             <div class="delivery__details">
               <div class="delivery__info">
@@ -118,7 +118,7 @@
           <section class="payment block">
             <div class="payment__header block__header">
               <h2 class="payment__title block__title">Способ оплаты</h2>
-              <button class="payment__button block__button">Изменить</button>
+              <button class="payment__button block__button" type="button">Изменить</button>
             </div>
             <div class="payment__card card">
               <div class="card__logo">
@@ -225,7 +225,7 @@
               <div class="order__delivery content">
                 <div class="order__delivery-header content__header">
                   <div class="order__delivery-title content__title">Доставка в пункт выдачи</div>
-                  <button class="order__delivery-button content__button">
+                  <button class="order__delivery-button content__button" type="button">
                     <img src="./images/pencil.svg" alt="Изменить" />
                   </button>
                 </div>
@@ -247,7 +247,7 @@
               <div class="order__payment content">
                 <div class="order__payment-header content__header">
                   <div class="order__payment-title content__title">Оплата картой</div>
-                  <button class="order__payment-button content__button">
+                  <button class="order__payment-button content__button" type="button">
                     <img src="./images/pencil.svg" alt="Изменить" />
                   </button>
                 </div>
@@ -422,37 +422,8 @@
             </button>
           </div>
           <form class="payment-modal__form modal__form" action="">
-            <div class="modal__choice choice">
-              <div class="choice__item">
-                <input type="radio" id="mir" />
-                <label for="mir" class="card">
-                  <div class="card__logo"><img src="./images/mir.svg" alt="" /></div>
-                  <div class="card__number">1234 56•• •••• 1234</div>
-                </label>
-              </div>
-              <div class="choice__item">
-                <input type="radio" id="visa" />
-                <label for="visa" class="card"
-                  ><div class="card__logo"><img src="./images/visa.svg" alt="" /></div>
-                  <div class="card__number">1234 56•• •••• 1234</div></label
-                >
-              </div>
-              <div class="choice__item">
-                <input type="radio" id="mastercard" />
-                <label for="mastercard" class="card">
-                  <div class="card__logo"><img src="./images/mastercard.svg" alt="" /></div>
-                  <div class="card__number">1234 56•• •••• 1234</div>
-                </label>
-              </div>
-              <div class="choice__item">
-                <input type="radio" id="maestro" />
-                <label for="maestro" class="card">
-                  <div class="card__logo"><img src="./images/maestro.svg" alt="" /></div>
-                  <div class="card__number">1234 56•• •••• 1234</div></label
-                >
-              </div>
-            </div>
-            <button class="payment-modal__button button-submit" type="submit">Заказать</button>
+            <div class="modal__choice choice choice--payment"></div>
+            <button class="payment-modal__button button-submit" type="button">Выбрать</button>
           </form>
         </div>
       </div>
@@ -480,49 +451,14 @@
           </div>
           <form class="delivery-modal__form modal__form" action="">
             <div class="delivery-modal__type">
-              <button class="button-delivery" type="button">В пункт выдачи</button>
+              <button class="button-delivery button-delivery--active" type="button">
+                В пункт выдачи
+              </button>
               <button class="button-delivery" type="button">Курьером</button>
             </div>
             <div class="delivery-modal__subtitle">Мои адреса</div>
-            <div class="modal__choice choice">
-              <div class="choice__item">
-                <input type="radio" id="addres_1" />
-                <label for="addres_1" class="">
-                  <div class="choice__text">Бишкек, улица Табышалиева, 57</div>
-                  <div class="choice__rating rating">
-                    <img src="./images/star.svg" alt="" />
-                    <span>4.99</span>
-                    <span>Пункт выдачи</span>
-                  </div>
-                </label>
-                <img class="choice__delete" src="./images/bin.svg" alt="" />
-              </div>
-              <div class="choice__item">
-                <input type="radio" id="addres_2" />
-                <label for="addres_2" class="">
-                  <div class="choice__text">Бишкек, улица Жукеева-Пудовкина, 77/17</div>
-                  <div class="choice__rating rating">
-                    <img src="./images/star.svg" alt="" />
-                    <span>4.99</span>
-                    <span>Пункт выдачи</span>
-                  </div>
-                </label>
-                <img class="choice__delete" src="./images/bin.svg" alt="" />
-              </div>
-              <div class="choice__item">
-                <input type="radio" id="addres_3" />
-                <label for="addres_3" class="">
-                  <div class="choice__text">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</div>
-                  <div class="choice__rating rating">
-                    <img src="./images/star.svg" alt="" />
-                    <span>4.99</span>
-                    <span>Пункт выдачи</span>
-                  </div>
-                </label>
-                <img class="choice__delete" src="./images/bin.svg" alt="" />
-              </div>
-            </div>
-            <button class="delivery-modal__button button-submit" type="submit">Выбрать</button>
+            <div class="modal__choice choice choice--delivery"></div>
+            <button class="delivery-modal__button button-submit" type="button">Выбрать</button>
           </form>
         </div>
       </div>
