@@ -12,6 +12,10 @@ export const renderProducts = (products) => {
     const fullPrice = formatSum(item.fullPrice * item.count);
     const discountsTotal = item.discount.reduce((acc, curr) => acc + curr.value, 0);
     const currentPrice = formatSum(item.fullPrice * (1 - discountsTotal) * item.count);
+    const mainDiscount = item.discount[0];
+    const buyerDiscount = item.discount[1];
+    const mainDiscountValue = formatSum(mainDiscount.value * item.fullPrice * item.count);
+    const buyerDiscountValue = formatSum(buyerDiscount.value * item.fullPrice * item.count);
 
     basketItem.innerHTML = `
     <div class="item__left-side">
@@ -45,8 +49,13 @@ export const renderProducts = (products) => {
         : ''}
           <div class="item__stock text-small text-grey">${item.warehouse}</div>
           <div class="item__org text-small text-grey">
-            ${item.organization}
-            <img src="./images/info.svg" alt="" />
+            ${item.organization.name}
+            <img class='more-info' src="./images/info.svg" alt="" />
+            <div class="popup popup--org">
+              <h3>${item.organization.name}</h3>
+              <p>${item.organization.OGRN}</p>
+              <p >${item.organization.address}</p>
+          </div>
           </div>
         </div>
       </div>
@@ -77,10 +86,20 @@ export const renderProducts = (products) => {
       </div>
       <div class="item__price price">
         <div class="price__current">${currentPrice} <span>сом</span></div>
-        <div class="price__total">${fullPrice} сом</div>
+        <div class="price__total more-info">${fullPrice} сом</div>
+        <div class="popup popup--price">
+          <div class="price__info price__info--grey">
+            <div>${mainDiscount.type}</div>
+            <div>${buyerDiscount.type}</div>
+          </div>
+          <div class="price__info">
+            <div>-${mainDiscountValue} сом</div>
+            <div>-${buyerDiscountValue} сом</div>
+          </div>
+        </div>
       </div>
     </div>
-`
+  `
   });
 }
 
