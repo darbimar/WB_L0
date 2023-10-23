@@ -4,6 +4,8 @@ import { selectPayImmediately, setTotalSum } from './components/total.js';
 import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice, updatedProducts } from './components/product/updateProduct.js';
 import { renderDeliveryDateInfo } from './components/delivery.js';
 import { closeModal, defineDeliveryType, openModal } from './components/modal/modal.js';
+import { formatPhoneNumber } from './utils/validate.js';
+import { removeError, validateForm, validateInput } from './components/recipientForm.js';
 
 renderProducts(products);
 renderMissingProducts(products);
@@ -23,9 +25,6 @@ const paymentModal = document.querySelector('.payment-modal');
 const modalButtons = document.querySelectorAll('.modal__button');
 const chooseDeliveryButton = document.querySelector('.delivery-modal__button');
 const choosePaymentButton = document.querySelector('.payment-modal__button');
-
-
-
 
 //Изменение количества товаров по нажатию на кнопку
 productsList.addEventListener('click', event => {
@@ -145,8 +144,57 @@ choosePaymentButton.addEventListener('click', () => {
   closeModal(paymentModal);
 })
 
+//Изменение кнопки заказа после выбора чекбокса
 const payImmediatelyCheckbox = document.querySelector('#pay-immediately');
 
 payImmediatelyCheckbox.addEventListener("change", () => selectPayImmediately(updatedProducts));
 
 
+//Валидация данных получаетеля
+const recipientForm = document.querySelector('.recipient__form');
+const formInputs = recipientForm.querySelectorAll('input');
+const submitButton = document.querySelector('.order__button');
+
+submitButton.addEventListener("click", function (event) {
+
+  event.preventDefault();
+
+  if (validateForm(recipientForm) === true) {
+    recipientForm.submit();
+  } else {
+    recipientForm.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+formInputs.forEach(input => {
+
+  input.addEventListener('blur', (event) => {
+    if (event.target.value) {
+      validateInput(input);
+    } else {
+      removeError(input);
+    }
+
+    input.addEventListener('input', () => {
+      validateInput(input);
+    });
+  });
+
+  input.addEventListener('input', () => {
+    const label = input.previousElementSibling;
+    const inputParent = input.parentNode;
+    if (input.value !== '') {
+      label.classList.add('recipient__label--visible');
+      inputParent.style.paddingTop = '0';
+    } else {
+      label.classList.remove('recipient__label--visible');
+      inputParent.style.paddingTop = '15px';
+    }
+  })
+
+});
+
+// Форматирование номера телефона при вводе
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener('input', (event) => formatPhoneNumber(event));

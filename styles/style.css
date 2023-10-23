@@ -582,32 +582,49 @@ input[type='checkbox']:checked {
   max-width: 700px;
 }
 
-.recepient__block {
+.recipient__block {
   display: flex;
   gap: 24px;
 }
 
-.recepient__field {
+.recipient__field {
   width: 100%;
   padding-top: 15px;
   padding-bottom: 18px;
 }
 
-.recepient__field--signed {
+.recipient__field--signed {
   padding-bottom: 0;
 }
 
-.recepient__input {
+.recipient__input {
   margin-top: 6px;
   padding-bottom: 5px;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.recepient__footnote {
+.recipient__input--error {
+  border-bottom: 1px solid var(--system-orange);
+}
+
+.recipient__footnote {
   margin-top: 4px;
   font-size: 12px;
   line-height: 14px;
+}
+
+.recipient__error {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--system-orange);
+}
+
+.recipient__label--visible {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--system-gray);
 }
 
 .right-block {
@@ -953,7 +970,7 @@ input[type='checkbox']:checked {
     width: 100%;
   }
 
-  .recepient__block {
+  .recipient__block {
     flex-direction: column;
   }
 }
@@ -1262,16 +1279,16 @@ input[type='checkbox']:checked {
     padding-bottom: 0;
   }
 
-  .recepient__block {
+  .recipient__block {
     gap: 0;
   }
 
-  .recepient__field {
+  .recipient__field {
     padding-top: 11px;
     padding-bottom: 30px;
   }
 
-  .recepient__field--signed {
+  .recipient__field--signed {
     padding-top: 13px;
     padding-bottom: 21px;
   }
