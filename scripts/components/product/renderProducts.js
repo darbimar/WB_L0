@@ -115,7 +115,7 @@ export const renderMissingProducts = (products) => {
     missingItem.innerHTML = `
       <div class="item__left-side">
         <img
-          class="item__image"
+          class="item__image item__image--missing"
           src=${item.image}
           alt=${item.title}
           width="72"

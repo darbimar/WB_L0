@@ -296,6 +296,11 @@ input[type='checkbox']:checked {
 .item__image {
   margin-top: 3px;
   margin-right: 16px;
+  border-radius: 8px;
+}
+
+.item__image--missing {
+  filter: grayscale(1);
 }
 
 .item__info {
@@ -923,6 +928,10 @@ input[type='checkbox']:checked {
   cursor: pointer;
 }
 
+.light {
+  color: rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1024px) {
   .left-block {
     width: 67%;
@@ -1076,6 +1085,16 @@ input[type='checkbox']:checked {
 
   .button-submit {
     margin-top: auto;
+  }
+
+  .navbar__count {
+    right: -6px;
+    top: -4px;
+  }
+
+  .navbar__logo {
+    position: relative;
+    height: 28px;
   }
 }
 
@@ -1328,15 +1347,5 @@ input[type='checkbox']:checked {
 
   .navbar {
     justify-content: space-between;
-  }
-
-  .navbar__logo {
-    position: relative;
-    height: 28px;
-  }
-
-  .navbar__count {
-    right: -6px;
-    top: -4px;
   }
 }

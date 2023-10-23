@@ -42,9 +42,32 @@ export const changeCount = (id, action, value) => {
     }
   });
 
+  renderProducts(updatedProducts);
   renderDeliveryDateInfo(updatedProducts);
   selectPayImmediately(updatedProducts);
+  setCountButtonColor()
 }
+
+export const setCountButtonColor = () => {
+  document.querySelectorAll('.item__count-input').forEach((input, index) => {
+
+    const minusButton = input.previousElementSibling;
+    const plusButton = input.nextElementSibling;
+
+    if (+input.value === 1) {
+      minusButton.classList.add('light');
+    } else {
+      minusButton.classList.remove('light');
+    }
+
+    if (+input.value === products[index].availability) {
+      plusButton.classList.add('light');
+    } else {
+      plusButton.classList.remove('light');
+    }
+  })
+}
+
 
 export const updatePrice = (product) => {
   const productElem = document.querySelector(`.item[data-id='${product.id}']`);

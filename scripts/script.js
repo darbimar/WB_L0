@@ -1,7 +1,7 @@
 import { products } from './data.js';
 import { renderProducts, renderMissingProducts } from './components/product/renderProducts.js';
 import { selectPayImmediately, setTotalSum } from './components/total.js';
-import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice, updatedProducts } from './components/product/updateProduct.js';
+import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, setCountButtonColor, updatePrice, updatedProducts } from './components/product/updateProduct.js';
 import { renderDeliveryDateInfo } from './components/delivery.js';
 import { closeModal, defineDeliveryType, openModal } from './components/modal/modal.js';
 import { formatPhoneNumber } from './utils/validate.js';
@@ -11,6 +11,7 @@ renderProducts(products);
 renderMissingProducts(products);
 renderDeliveryDateInfo(products);
 setTotalSum(products);
+setCountButtonColor();
 
 const productsList = document.querySelector('.basket__list');
 const missingProductsList = document.querySelector('.basket__list--missing');
@@ -35,23 +36,26 @@ productsList.addEventListener('click', event => {
     changeCount(id, 'increase');
     setTotalSum(products);
     updatePrice(products[id - 1]);
+
   } else if (event.target.classList.contains('minus')) {
     changeCount(id, 'decrease');
     setTotalSum(products);
     updatePrice(products[id - 1]);
   }
+
 });
 
 //Изменение количества товаров через ввод в input
-document.querySelectorAll('.item__count-input').forEach(input => {
-  input.addEventListener('input', event => {
+productsList.addEventListener('input', event => {
+  if (event.target.classList.contains('item__count-input')) {
     const id = +event.target.getAttribute('data-id');
     const value = parseInt(event.target.value);
     changeCount(id, 'set', value);
     setTotalSum(products);
     updatePrice(products[id - 1]);
-  });
+  }
 });
+
 
 // Удаление товаров
 productsList.addEventListener('click', event => deleteProduct(event, 'productsList'));
