@@ -1,12 +1,10 @@
-import { products } from '../data.js';
 import { formatSum } from '../utils/formatSum.js';
 
-export const setTotalSum = () => {
+export const setTotalSum = (products) => {
   const totalCurrentSumElem = document.querySelector('.order__sum');
   const totalCountElem = document.querySelectorAll('.total-count');
   const totalFullSumElem = document.querySelector('#full-sum');
   const totalDiscountSumElem = document.querySelector('#full-discount');
-
 
   const selectedProducts = products.filter(item => item.isChecked);
 
@@ -45,3 +43,16 @@ export const getTotalData = (products) => {
 
 }
 
+const orderButton = document.querySelector(".order__button");
+const payImmediatelyCheckbox = document.querySelector('#pay-immediately');
+
+export const selectPayImmediately = (products) => {
+
+  const [totalSum] = getTotalData(products);
+
+  if (payImmediatelyCheckbox.checked) {
+    orderButton.textContent = `Оплатить ${formatSum(totalSum)} сом`;
+  } else {
+    orderButton.textContent = "Заказать";
+  }
+}

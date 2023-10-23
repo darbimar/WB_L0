@@ -1,14 +1,11 @@
 import { products } from "../../data.js";
 import { formatSum } from "../../utils/formatSum.js";
 import { renderDeliveryDateInfo } from "../delivery.js";
-import { getTotalData, setTotalSum } from "../total.js";
+import { getTotalData, selectPayImmediately, setTotalSum } from "../total.js";
 import { renderMissingProducts, renderProducts } from "./renderProducts.js";
 
 export let updatedProducts = products;
 let updatedMissingProducts = products;
-
-const checkboxes = document.querySelectorAll('.item__checkbox');
-
 
 export const changeCount = (id, action, value) => {
   const product = updatedProducts.filter(p => p.id === id)[0];
@@ -46,6 +43,7 @@ export const changeCount = (id, action, value) => {
   });
 
   renderDeliveryDateInfo(updatedProducts);
+  selectPayImmediately(updatedProducts);
 }
 
 export const updatePrice = (product) => {
@@ -76,12 +74,12 @@ export const deleteProduct = (event, productList) => {
       updatedMissingProducts = updatedMissingProducts.filter(item => item.id !== itemId);
       renderMissingProducts(updatedMissingProducts);
     }
-    setTotalSum();
+
   }
 
-  console.log(checkboxes);
-
+  setTotalSum(updatedProducts);
   renderDeliveryDateInfo(updatedProducts);
+  selectPayImmediately(updatedProducts);
 }
 
 export const addFavorite = (event) => {
@@ -110,9 +108,13 @@ export const selectProduct = (event, selectAllCheckbox) => {
   } else {
     selectAllCheckbox.checked = true;
   }
+  const selectedProducts = updatedProducts.filter(item => item.isChecked);
 
-  setTotalSum();
-  renderDeliveryDateInfo(updatedProducts);
+
+  setTotalSum(selectedProducts);
+  renderDeliveryDateInfo(selectedProducts);
+  selectPayImmediately(selectedProducts);
+
 }
 
 export const selectAllProduct = (selectAllCheckbox, checkboxes) => {
@@ -129,8 +131,11 @@ export const selectAllProduct = (selectAllCheckbox, checkboxes) => {
     checkbox.checked = isChecked;
   });
 
-  setTotalSum();
-  renderDeliveryDateInfo(updatedProducts);
+  const selectedProducts = updatedProducts.filter(item => item.isChecked);
+
+  setTotalSum(selectedProducts);
+  renderDeliveryDateInfo(selectedProducts);
+  selectPayImmediately(selectedProducts);
 
 }
 

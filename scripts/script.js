@@ -1,15 +1,14 @@
 import { products } from './data.js';
 import { renderProducts, renderMissingProducts } from './components/product/renderProducts.js';
-import { setTotalSum } from './components/total.js';
-import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice } from './components/product/updateProduct.js';
+import { selectPayImmediately, setTotalSum } from './components/total.js';
+import { addFavorite, changeCollapse, changeCount, deleteProduct, selectAllProduct, selectProduct, updatePrice, updatedProducts } from './components/product/updateProduct.js';
 import { renderDeliveryDateInfo } from './components/delivery.js';
 import { closeModal, defineDeliveryType, openModal } from './components/modal/modal.js';
 
 renderProducts(products);
 renderMissingProducts(products);
 renderDeliveryDateInfo(products);
-setTotalSum();
-
+setTotalSum(products);
 
 const productsList = document.querySelector('.basket__list');
 const missingProductsList = document.querySelector('.basket__list--missing');
@@ -26,6 +25,8 @@ const chooseDeliveryButton = document.querySelector('.delivery-modal__button');
 const choosePaymentButton = document.querySelector('.payment-modal__button');
 
 
+
+
 //Изменение количества товаров по нажатию на кнопку
 productsList.addEventListener('click', event => {
   const product = event.target.closest('.item');
@@ -33,11 +34,11 @@ productsList.addEventListener('click', event => {
 
   if (event.target.classList.contains('plus')) {
     changeCount(id, 'increase');
-    setTotalSum();
+    setTotalSum(products);
     updatePrice(products[id - 1]);
   } else if (event.target.classList.contains('minus')) {
     changeCount(id, 'decrease');
-    setTotalSum();
+    setTotalSum(products);
     updatePrice(products[id - 1]);
   }
 });
@@ -48,7 +49,7 @@ document.querySelectorAll('.item__count-input').forEach(input => {
     const id = +event.target.getAttribute('data-id');
     const value = parseInt(event.target.value);
     changeCount(id, 'set', value);
-    setTotalSum();
+    setTotalSum(products);
     updatePrice(products[id - 1]);
   });
 });
@@ -143,5 +144,9 @@ choosePaymentButton.addEventListener('click', () => {
 
   closeModal(paymentModal);
 })
+
+const payImmediatelyCheckbox = document.querySelector('#pay-immediately');
+
+payImmediatelyCheckbox.addEventListener("change", () => selectPayImmediately(updatedProducts));
 
 
